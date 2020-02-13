@@ -6,10 +6,12 @@ import android.widget.BaseAdapter;
 
 public class ColorAdapter extends BaseAdapter {
 
+    private String[] colors;
+
     public ColorAdapter()
     {
         super();
-
+        colors = new String[]{"Red", "Orange", "Yellow", "Green", "Blue", "Violet"};
     }
 
     @Override
