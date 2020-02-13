@@ -1,17 +1,22 @@
 package temple.edu.coloradapter;
 
+import android.content.Context;
+import android.graphics.Color;
 import android.view.View;
 import android.view.ViewGroup;
 import android.widget.BaseAdapter;
+import android.widget.TextView;
 
 public class ColorAdapter extends BaseAdapter {
 
+    private Context context;
     private String[] colors;
 
-    public ColorAdapter()
+    public ColorAdapter(Context context)
     {
         super();
-        colors = new String[]{"Red", "Orange", "Yellow", "Green", "Blue", "Violet"};
+        this.context = context;
+        this.colors = new String[]{"Red", "Orange", "Yellow", "Green", "Blue", "Violet"};
     }
 
     @Override
@@ -22,7 +27,7 @@ public class ColorAdapter extends BaseAdapter {
     @Override
     public Object getItem(int position)
     {
-        return (position >= 0 && position < colors.length) ? colors[position] : null;
+        return isBetween(position, 0, this.colors.length) ? this.colors[position] : null;
     }
 
     @Override
@@ -33,6 +38,27 @@ public class ColorAdapter extends BaseAdapter {
 
     @Override
     public View getView(int position, View convertView, ViewGroup parent){
-        return null;
+        if(!isBetween(position, 0, this.colors.length))
+            return null;
+
+        TextView newView = (TextView)convertView;
+        if(newView == null)
+        {
+            newView = new TextView(this.context);
+            newView.setText(this.colors[position]);
+            newView.setBackgroundColor(Color.parseColor(this.colors[position]));
+        }
+        else{
+            newView.setText(this.colors[position]);
+            newView.setBackgroundColor(Color.parseColor(this.colors[position]));
+        }
+
+        return newView;
+    }
+
+    /// check if value is in between a and b ( not including b )
+    private boolean isBetween(int x, int a, int b)
+    {
+        return x >= 0 && x < b;
     }
 }
