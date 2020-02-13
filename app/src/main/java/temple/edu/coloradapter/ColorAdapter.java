@@ -51,7 +51,8 @@ public class ColorAdapter extends BaseAdapter {
         if(newView == null)
         {
             newView = new TextView(this.context);
-            newView.setTextSize(TypedValue.COMPLEX_UNIT_SP, 20 );
+            newView.setTextColor(Color.BLACK);
+            newView.setTextSize(TypedValue.COMPLEX_UNIT_SP, 24 );
         }
 
         newView.setText(this.colors[position]);
