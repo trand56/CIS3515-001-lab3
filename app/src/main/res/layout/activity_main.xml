@@ -4,14 +4,15 @@
     xmlns:tools="http://schemas.android.com/tools"
     android:layout_width="match_parent"
     android:layout_height="match_parent"
-    tools:context=".ColorActivity">
+    tools:context=".ColorActivity"
+    android:id="@+id/colorLayout">
 
     <Spinner
         android:id="@+id/colorSpinner"
         android:layout_width="209dp"
         android:layout_height="wrap_content"
-        android:layout_marginStart="100dp"
-        android:layout_marginTop="232dp"
+        android:layout_marginStart="116dp"
+        android:layout_marginTop="244dp"
         app:layout_constraintStart_toStartOf="parent"
         app:layout_constraintTop_toTopOf="parent" />
 

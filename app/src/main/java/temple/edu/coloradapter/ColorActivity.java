@@ -21,7 +21,7 @@ public class ColorActivity extends AppCompatActivity {
         super.onCreate(savedInstanceState);
         setContentView(R.layout.activity_main);
 
-        ColorAdapter colAdapter = new ColorAdapter(this);
+        final ColorAdapter colAdapter = new ColorAdapter(this);
         Spinner spin = findViewById(R.id.colorSpinner);
         spin.setAdapter(colAdapter);
 
@@ -29,6 +29,7 @@ public class ColorActivity extends AppCompatActivity {
             @Override
             public void onItemSelected(AdapterView<?> parent, View view, int position, long id) {
                 view.setBackgroundColor(Color.WHITE);
+                findViewById(R.id.colorLayout).setBackgroundColor(Color.parseColor(colAdapter.getItem(position).toString()));
             }
 
             @Override
