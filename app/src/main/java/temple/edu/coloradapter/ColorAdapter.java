@@ -22,7 +22,7 @@ public class ColorAdapter extends BaseAdapter {
     @Override
     public Object getItem(int position)
     {
-        return null;
+        return (position >= 0 && position < colors.length) ? colors[position] : null;
     }
 
     @Override
