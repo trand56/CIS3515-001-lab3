@@ -2,6 +2,8 @@ package temple.edu.coloradapter;
 
 import android.content.Context;
 import android.graphics.Color;
+import android.graphics.Typeface;
+import android.util.TypedValue;
 import android.view.View;
 import android.view.ViewGroup;
 import android.widget.AdapterView;
@@ -18,7 +20,9 @@ public class ColorAdapter extends BaseAdapter {
     {
         super();
         this.context = context;
-        this.colors = new String[]{"Red", "Yellow", "Blue", "Cyan", "Gray", "Magenta"};
+        this.colors = new String[]{ "Teal", "Red", "Blue", "Yellow", "Purple",
+                                    "White", "LightGray", "Gray", "DarkGray", "Black",
+                                    "Lime", "Navy", "Aqua", "Fuchsia", "Olive"};
     }
 
     @Override
@@ -47,13 +51,11 @@ public class ColorAdapter extends BaseAdapter {
         if(newView == null)
         {
             newView = new TextView(this.context);
-            newView.setText(this.colors[position]);
-            newView.setBackgroundColor(Color.parseColor(this.colors[position]));
+            newView.setTextSize(TypedValue.COMPLEX_UNIT_SP, 20 );
         }
-        else{
-            newView.setText(this.colors[position]);
-            newView.setBackgroundColor(Color.parseColor(this.colors[position]));
-        }
+
+        newView.setText(this.colors[position]);
+        newView.setBackgroundColor(Color.parseColor(this.colors[position]));
 
         return newView;
     }
