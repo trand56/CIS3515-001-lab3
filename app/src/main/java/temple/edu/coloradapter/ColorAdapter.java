@@ -16,7 +16,7 @@ public class ColorAdapter extends BaseAdapter {
     {
         super();
         this.context = context;
-        this.colors = new String[]{"Red", "Orange", "Yellow", "Green", "Blue", "Violet"};
+        this.colors = new String[]{"Red", "Yellow", "Blue", "Cyan", "Gray", "Magenta"};
     }
 
     @Override

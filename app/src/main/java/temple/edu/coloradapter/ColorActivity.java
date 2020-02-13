@@ -3,7 +3,11 @@ package temple.edu.coloradapter;
 import androidx.appcompat.app.AppCompatActivity;
 
 import android.os.Bundle;
+import android.widget.Adapter;
 import android.widget.Spinner;
+import android.widget.TextView;
+
+import org.w3c.dom.Text;
 
 public class ColorActivity extends AppCompatActivity {
 
@@ -13,7 +17,9 @@ public class ColorActivity extends AppCompatActivity {
         setContentView(R.layout.activity_main);
 
 
-
+        ColorAdapter colAdapter = new ColorAdapter(this);
+        Spinner spin = findViewById(R.id.colorSpinner);
+        spin.setAdapter(colAdapter);
 
 
 
