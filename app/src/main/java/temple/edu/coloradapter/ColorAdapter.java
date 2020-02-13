@@ -16,7 +16,7 @@ public class ColorAdapter extends BaseAdapter {
 
     @Override
     public int getCount(){
-        return 0;
+        return colors.length;
     }
 
     @Override
